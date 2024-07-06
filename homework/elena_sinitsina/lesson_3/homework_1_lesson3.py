@@ -1,5 +1,5 @@
-a = 20
-b = 30
+a = 50
+b = 60
 print(a + b)
 print(a - b)
 print(a * b)
