@@ -5,8 +5,8 @@ my_dict = {'tuple': (3, 100, 4, 90, 8, 4),
 print(my_dict['set'])
 my_dict['list'].append('text')
 my_dict['list'].pop(1)
-my_dict['i am a tuple'] = 'ilovemylife'
-del_el = my_dict.pop('list')
+my_dict['dict']['i am a tuple'] = 'easylife'
+popped_value = my_dict['dict'].pop('two')
 my_dict['set'].add('timeflies')
-del_el_2 = my_dict['set'].pop()
+popped_value_2 = my_dict['set'].pop()
 print(my_dict)
