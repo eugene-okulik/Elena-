@@ -7,7 +7,7 @@ print(tuple_value[-1])
 my_dict['list'].append('text')
 my_dict['list'].pop(1)
 tuple_value_new = (1)
-key_new = ('i am a tuple')
+key_new = ('i am a tuple',)
 my_dict['dict'][key_new] = tuple_value_new
 popped_value = my_dict['dict'].pop('two')
 my_dict['set'].add('timeflies')
