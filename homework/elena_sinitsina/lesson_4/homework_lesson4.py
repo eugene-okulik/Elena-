@@ -2,7 +2,8 @@ my_dict = {'tuple': (3, 100, 4, 90, 8, 4),
            'list': [4, 678, 900, 'rrr', 777],
            'dict': {'one': 1, 'two': 'two'},
            'set': {1, False, 7, 'text'}}
-print(my_dict['set'])
+tuple_value = my_dict['tuple']
+print(tuple_value[-1])
 my_dict['list'].append('text')
 my_dict['list'].pop(1)
 my_dict['dict']['i am a tuple'] = 'easylife'
