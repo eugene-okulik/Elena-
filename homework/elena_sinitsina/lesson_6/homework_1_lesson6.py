@@ -12,4 +12,3 @@ for word in words:
     fin_words.append(word_new)
 new_text = ' '.join(fin_words)
 print(new_text)
-
