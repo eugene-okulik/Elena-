@@ -1,22 +1,27 @@
-def fibonacci_generator():
-    fib_list = [0, 1]
-    while True:
-        next_value = fib_list[-1] + fib_list[-2]
-        fib_list.append(next_value)
-        yield next_value
+import sys
+sys.set_int_max_str_digits(100000)
 
 
-fib_gen = fibonacci_generator()
+def progression(limit=100000):
+    x = 0
+    y = 1
+    count = 1
+
+    while count <= limit:
+        yield x
+        x, y = y, x + y
+        count += 1
 
 
-def fibonacci_number(n):
-    fib_list = [0, 1]
-    while len(fib_list) < n:
-        fib_list.append(fib_list[-1] + fib_list[-2])
-    return fib_list[n - 1]
-
-
-print("5th Fibonacci number:", fibonacci_number(5))
-print("200th Fibonacci number:", fibonacci_number(200))
-print("1000th Fibonacci number:", fibonacci_number(1000))
-print("10000th Fibonacci number:", fibonacci_number(10000))
+new_count = 1
+for number in progression(100000):
+    if new_count == 5:
+        print(number)
+    elif new_count == 200:
+        print(number)
+    elif new_count == 1000:
+        print(number)
+    elif new_count == 100000:
+        print(number)
+        break
+    new_count += 1
