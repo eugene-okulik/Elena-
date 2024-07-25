@@ -39,18 +39,17 @@ class Textbook(Book):
         self.grade = grade
         self.have_tasks = have_tasks
 
-
     def __str__(self):
         status_reserved = 'Reserved' if self.reserved else ""
         return (f'Name of the book: {self.name_book}, Author: {self.author}, Number of pages: {self.num_pages}, '
                 f'Subject: {self.subject}, Grade: {self.grade}, {status_reserved}')
 
 
-textbook_1 = Textbook('Algebra', 'Ivanov', 250,'234567', "Math", 9, True)
-textbook_2 = Textbook('Art', 'Petrov', 100,'234568', 'Art', 6, True)
+textbook_1 = Textbook('Algebra', 'Ivanov', 250, '234567', "Math", 9, True)
+textbook_2 = Textbook('Art', 'Petrov', 100, '234568', 'Art', 6, True)
 textbook_3 = Textbook('Geography of Asia', 'Sidorov', 100,'234569', 'Geography', 8, True)
-textbook_4 = Textbook('History', 'Kuznetsov', 150,'2334570', 'History', 7, False)
-textbook_5 = Textbook('Testing', 'Okulik', 200,'234571', 'IT', 10, True)
+textbook_4 = Textbook('History', 'Kuznetsov', 150, '2334570', 'History', 7, False)
+textbook_5 = Textbook('Testing', 'Okulik', 200, '234571', 'IT', 10, True)
 textbook_5.reserve()
 
 print(textbook_1)
