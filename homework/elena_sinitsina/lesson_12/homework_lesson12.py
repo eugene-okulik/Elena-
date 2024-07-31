@@ -14,7 +14,7 @@ class Flower:
 
 class Orchid(Flower):
     def __init__(self, color, length, fresh_days, price, life_days=10):
-                super().__init__("Orchid", color, length, fresh_days, price, life_days)
+        super().__init__("Orchid", color, length, fresh_days, price, life_days)
 
 
 class Rose(Flower):
@@ -70,10 +70,3 @@ print(bouquet)
 
 print("\nSearch for flowers by color 'pink':")
 print(bouquet.search_by_color('pink'))
-
-
-
-
-
-
-
