@@ -34,4 +34,3 @@ with open(file_path, 'r', encoding='utf-8') as file:
                 number = left_parts[0]
                 date_str = left_parts[1]
                 process_action(date_str, action)
-                
