@@ -1,7 +1,9 @@
 import datetime
 import os
 
-file_path = os.path.join('C:\\Users\\Windows11\\Elena-\\homework\\eugene_okulik\\hw_13', 'data.txt')
+base_path = os.path.dirname(__file__)
+homework_path = os.path.dirname(os.path.dirname(base_path))
+file_path = os.path.join(homework_path, 'eugene_okulik', 'hw_13', 'data.txt')
 
 
 def process_action(date_str, action):
