@@ -70,7 +70,7 @@ mark_values = [
 cursor.executemany(new_mark, mark_values)
 
 query = '''
-SELECT 
+SELECT
    students.name,
     students.second_name,
     "groups".title AS group_title,
