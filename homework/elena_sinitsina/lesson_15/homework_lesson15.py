@@ -71,12 +71,12 @@ cursor.executemany(new_mark, mark_values)
 
 query = '''
 SELECT 
-   students.name, 
-    students.second_name, 
-    "groups".title AS group_title, 
-    books.title AS book_title, 
-    marks.value AS mark_value, 
-    lessons.title AS lesson_title, 
+   students.name,
+    students.second_name,
+    "groups".title AS group_title,
+    books.title AS book_title,
+    marks.value AS mark_value,
+    lessons.title AS lesson_title,
     subjets.title AS subject_title
 FROM
     students
@@ -85,7 +85,7 @@ JOIN books ON students.id = books.taken_by_student_id
 JOIN marks ON students.id = marks.student_id
 JOIN lessons ON marks.lesson_id = lessons.id
 JOIN subjets ON lessons.subject_id = subjets.id
-WHERE 
+WHERE
 students.id = %s;
 '''
 cursor.execute(query, (new_student_id,))
