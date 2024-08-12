@@ -42,8 +42,7 @@ SELECT
     subjets.title AS subject_title,
     lessons.title AS lesson_title,
     marks.value AS mark_value
-FROM
-    students 
+FROM students
 JOIN "groups" ON students.group_id = "groups".id
 JOIN books ON students.id = books.taken_by_student_id
 JOIN marks ON students.id = marks.student_id
@@ -59,11 +58,11 @@ db_data = cursor.fetchall()
 
 db_data_set = set(tuple(row) for row in db_data)
 
-print("\nSQL Data:")
+print("\nsql data:")
 for row in db_data_set:
     print(row)
 
-print("\nMissing Data:")
+print("\nmissing data:")
 for row in csv_data:
     if tuple(row) not in db_data_set:
         print(row)
