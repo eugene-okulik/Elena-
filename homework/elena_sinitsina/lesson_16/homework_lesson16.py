@@ -41,9 +41,9 @@ SELECT
     books.title AS book_title,
     subjets.title AS subject_title,
     lessons.title AS lesson_title,
-    marks.value AS mark_value        
+    marks.value AS mark_value
 FROM
-    students    
+    students 
 JOIN "groups" ON students.group_id = "groups".id
 JOIN books ON students.id = books.taken_by_student_id
 JOIN marks ON students.id = marks.student_id
