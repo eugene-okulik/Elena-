@@ -48,7 +48,6 @@ JOIN books ON students.id = books.taken_by_student_id
 JOIN marks ON students.id = marks.student_id
 JOIN lessons ON marks.lesson_id = lessons.id
 JOIN subjets ON lessons.subject_id = subjets.id
-WHERE students.name = 'Ivan' and students.second_name = 'Petrov'
 ORDER BY students.name, students.second_name, group_title, book_title, subject_title, lesson_title, mark_value;
 ;
 '''
@@ -58,9 +57,9 @@ db_data = cursor.fetchall()
 
 db_data_set = set(tuple(row) for row in db_data)
 
-print("\nsql data:")
-for row in db_data_set:
-    print(row)
+#print("\nsql data:")
+#for row in db_data_set:
+#    print(row)
 
 print("\nmissing data:")
 for row in csv_data:
