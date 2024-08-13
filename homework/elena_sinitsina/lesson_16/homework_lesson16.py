@@ -57,10 +57,6 @@ db_data = cursor.fetchall()
 
 db_data_set = set(tuple(row) for row in db_data)
 
-#print("\nsql data:")
-#for row in db_data_set:
-#    print(row)
-
 print("\nmissing data:")
 for row in csv_data:
     if tuple(row) not in db_data_set:
