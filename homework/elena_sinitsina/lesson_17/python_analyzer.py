@@ -13,7 +13,7 @@ def find_text(file_path, search_text, first_only=False):
             if word_indexes:
                 for index in word_indexes:
                     start = max(0, index - 5)
-                    end = min(len(words), index + 6)  # 5 words after the found word
+                    end = min(len(words), index + 6)
                     context = ' '.join(words[start:end])
                     print(f'File: {os.path.basename(file_path)}, line: {line_num}')
                     print(f'Context: {context}')
@@ -30,8 +30,6 @@ def main():
     parser.add_argument("--text", help="Text for search")
     parser.add_argument("--first", help="Show the first match", action="store_true")
     args = parser.parse_args()
-
-
     for root, dirs, files in os.walk(args.directory):
         for file in files:
             file_path = os.path.join(root, file)
