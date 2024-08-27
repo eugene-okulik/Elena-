@@ -2,12 +2,12 @@ import requests
 import json
 
 
-def all_posts():
-    response = requests.get('https://api.restful-api.dev/objects')
+#def all_posts():
+#    response = requests.get('https://api.restful-api.dev/objects')
 #   print(json.dumps(json_data, indent=4))
 
 
-all_posts()
+#all_posts()
 
 
 def post_a_post():
