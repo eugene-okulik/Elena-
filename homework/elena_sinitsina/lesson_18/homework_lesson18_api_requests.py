@@ -4,7 +4,6 @@ import json
 
 def all_posts():
     response = requests.get('https://api.restful-api.dev/objects')
-    json_data = response.json()
 #   print(json.dumps(json_data, indent=4))
 
 
@@ -118,4 +117,3 @@ def delete_a_post(post_id):
 
 
 delete_a_post(post_id)
-
