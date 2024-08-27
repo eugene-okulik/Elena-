@@ -118,7 +118,3 @@ def delete_a_post(post_id):
 
 
 delete_a_post(post_id)
-
-
-
-
