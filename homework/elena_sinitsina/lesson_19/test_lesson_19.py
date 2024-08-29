@@ -55,7 +55,7 @@ def test_get_one_post(new_post_id):
 def test_add_post(body):
     headers = {'Content-Type': 'application/json'}
     response = requests.post(
-    'https://api.restful-api.dev/objects',
+        'https://api.restful-api.dev/objects',
         json=body,
         headers=headers
     )
@@ -78,5 +78,3 @@ def test_two(logins):
 
 def test_three():
     assert 1 == 1
-
-
