@@ -108,11 +108,3 @@ def test_two(logins):
 
 def test_three():
     assert 1 == 1
-
-
-
-
-
-
-
-
