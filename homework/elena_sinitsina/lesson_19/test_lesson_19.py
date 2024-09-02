@@ -19,7 +19,7 @@ def before_after_test():
 
 
 @pytest.fixture()
-def new_post_id():
+def new_item_id():
     body = {
         "name": "NEW MODEL",
         "data": {
@@ -33,17 +33,17 @@ def new_post_id():
         json=body,
         headers=headers
     )
-    post_id = response.json()['id']
-    print(post_id)
-    yield post_id
-    print('deleting the post')
-    requests.delete(f'https://api.restful-api.dev/objects/{post_id}')
+    item_id = response.json()['id']
+    print(item_id)
+    yield item_id
+    print('deleting the item')
+    requests.delete(f'https://api.restful-api.dev/objects/{item_id}')
 
 
 @pytest.mark.critical
-def test_get_one_post(new_post_id):
-    response = requests.get(f'https://api.restful-api.dev/objects/{new_post_id}').json()
-    assert response['id'] == new_post_id
+def test_get_one_item(new_item_id):
+    response = requests.get(f'https://api.restful-api.dev/objects/{new_item_id}').json()
+    assert response['id'] == new_item_id
 
 
 @pytest.mark.critical
@@ -52,7 +52,7 @@ def test_get_one_post(new_post_id):
     {"name": "NEW MODEL 2", "data": {"generation": "12th", "capacity GB": 2000}},
     {"name": "NEW MODEL 3", "data": {"generation": "13th", "capacity GB": 3000}}
 ])
-def test_add_post(body):
+def test_add_item(body):
     headers = {'Content-Type': 'application/json'}
     response = requests.post(
         'https://api.restful-api.dev/objects',
@@ -63,6 +63,36 @@ def test_add_post(body):
     print(response.text)
     assert response.status_code == 200
     assert isinstance(response.json()['id'], str)
+
+
+@pytest.mark.medium
+def test_patch_item(new_item_id):
+    patch_body = {
+        "name": "SUPERNEW MODEL UPD",
+        "data": {
+            "generation": "12th",
+            "capacity GB": 3000
+        }
+    }
+    headers = {"content-type": "application/json"}
+    response = requests.patch(
+        f'https://api.restful-api.dev/objects/{new_item_id}',
+        json=patch_body,
+        headers=headers
+    )
+    assert response.status_code == 200
+    updated_post = response.json()
+    assert updated_post['name'] == "SUPERNEW MODEL UPD"
+    assert updated_post['data']['generation'] == "12th"
+    assert updated_post['data']['capacity GB'] == 3000
+
+
+@pytest.mark.regression
+def test_delete_post(new_item_id):
+    delete_response = requests.delete(f'https://api.restful-api.dev/objects/{new_item_id}')
+    assert delete_response.status_code == 200
+    get_response = requests.get(f'https://api.restful-api.dev/objects/{new_item_id}')
+    assert get_response.status_code == 404
 
 
 @pytest.mark.regression
@@ -78,3 +108,11 @@ def test_two(logins):
 
 def test_three():
     assert 1 == 1
+
+
+
+
+
+
+
+
