@@ -22,4 +22,3 @@ class CreateItem(Endpoint):
                 raise KeyError("Response JSON does not contain 'id'")
         elif not expect_failure:
             self.response.raise_for_status()
-

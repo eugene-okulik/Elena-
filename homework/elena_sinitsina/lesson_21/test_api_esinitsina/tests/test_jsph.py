@@ -8,7 +8,7 @@ TEST_DATA = [
 ]
 
 NEGATIVE_DATA = [
-    {"name": ["MODEL 100"], "data": {"generation": "104th", "capacity GB": 5000}},
+    {"name": ["MODEL 100"], "data": {"generation": "104th", "capacity GB": 5000}}, 
     {"name": {"MODEL 200": ""}, "data": {"generation": "200th", "capacity GB": 6000}}
 ]
 
