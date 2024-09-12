@@ -11,7 +11,7 @@ def create_item_endpoint():
 
 
 @pytest.fixture()
-def item_id(create_item_endpoint):
+def item_id(create_item_endpoint, delete_item_endpoint):
     payload = {
         "name": "TEMP MODEL",
         "data": {
@@ -20,7 +20,10 @@ def item_id(create_item_endpoint):
         }
     }
     create_item_endpoint.new_item(payload)
-    return create_item_endpoint.item_id
+
+    yield create_item_endpoint.item_id
+    delete_item_endpoint.delete_item(create_item_endpoint.item_id)
+    delete_item_endpoint.check_status_of_deleted_item(create_item_endpoint.item_id)
 
 
 @pytest.fixture()

@@ -55,3 +55,4 @@ def test_delete_item(delete_item_endpoint, item_id):
     delete_item_endpoint.delete_item(item_id)
     delete_item_endpoint.check_that_status_is_200()
     delete_item_endpoint.check_if_item_deleted()
+    delete_item_endpoint.check_status_of_deleted_item(item_id)

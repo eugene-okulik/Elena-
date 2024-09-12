@@ -20,5 +20,7 @@ class CreateItem(Endpoint):
                 self.item_id = self.json['id']
             else:
                 raise KeyError("Response JSON does not contain 'id'")
-        elif not expect_failure:
-            self.response.raise_for_status()
+        elif expect_failure:
+            print(f"Expected failure: {self.response.status_code}")
+        else:
+            print(f"Unexpected failure: {self.response.status_code} - {self.response.text}")

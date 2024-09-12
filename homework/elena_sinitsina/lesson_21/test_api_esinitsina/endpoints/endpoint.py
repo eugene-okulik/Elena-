@@ -22,9 +22,3 @@ class Endpoint:
     @allure.step('Check that error 400 returned')
     def check_bad_request(self):
         assert self.response.status_code == 400, 'status is not 400'
-
-    @allure.step('Check if the item was deleted')
-    def check_if_item_deleted(self):
-        print(f"Response status: {self.response.status_code}")
-        print(f"Response body: {self.response.text}")
-        assert self.response.status_code in [200, 204], 'status is not 200 or 204'
