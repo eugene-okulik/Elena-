@@ -64,7 +64,7 @@ class ItemUser(HttpUser):
         item_id = random.choice([1, 2, 3, 4])
         payload = {
             "data": {
-                 "generation": "Updated Gen"
+                "generation": "Updated Gen"
             }
         }
         self.client.patch(
