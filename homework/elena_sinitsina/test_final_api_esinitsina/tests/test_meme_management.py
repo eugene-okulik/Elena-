@@ -15,8 +15,7 @@ def test_update_meme(update_meme_endpoint, meme_id):
             "text": "When you saved money and skipped QA",
             "url": "https://mailtrap.io/wp-content/uploads/2020/06/testing_meme4.jpg",
             "tags": ["fun", "QA"],
-            "info": {"colors": ["orange", "grey", "white"], "objects": ["picture", "text"]}
-    }
+            "info": {"colors": ["orange", "grey", "white"], "objects": ["picture", "text"]}}
     update_meme_endpoint.update_meme(meme_id, payload)
     update_meme_endpoint.check_that_status_is_200()
 

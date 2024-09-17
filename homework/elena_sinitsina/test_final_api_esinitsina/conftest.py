@@ -22,8 +22,7 @@ def data():
     return {
         "text": "Devs skipped QA",
         "url": "https://mailtrap.io/wp-content/uploads/2020/06/testing_meme4.jpg",
-        "tags": ["fun", "QA"], "info": {"colors": ["orange", "grey", "white"], "objects": ["picture", "text"]}
-         }
+        "tags": ["fun", "QA"], "info": {"colors": ["orange", "grey", "white"], "objects": ["picture", "text"]}}
 
 
 @pytest.fixture()

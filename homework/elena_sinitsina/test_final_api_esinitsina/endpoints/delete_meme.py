@@ -19,8 +19,8 @@ class DeleteMeme(Endpoint):
             if 'application/json' in self.response.headers.get('Content-Type', ''):
                 try:
                     self.json = self.response.json()
-                except JSONDecodeError:
-                    print("Error decoding JSON")
+                except requests.exceptions.JSONDecodeError:
+                    print("Failed to parse JSON response.")
                     self.json = None
             else:
                 self.json = self.response.text
