@@ -6,7 +6,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-
 @pytest.fixture()
 def driver():
     chrome_driver = webdriver.Chrome()
@@ -26,8 +25,6 @@ def test_student_registration_form(driver):
     input_hobby = 'Music'
     input_upload_picture = r'D:\My documents Elena\Elena-\homework\elena_sinitsina\lesson_23\Sherlock_H.jpg'
     input_current_address = '221B Baker Street'
-    input_state = 'NCR'
-    input_city = 'Gurgaon'
 
     driver.get('https://demoqa.com/automation-practice-form')
 
