@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 
 
 @pytest.fixture()
@@ -17,8 +18,8 @@ def driver():
 def test_student_registration_form(driver):
     input_language = 'Python'
     driver.get('https://www.qa-practice.com/elements/select/single_select')
-    language_dropdown = driver.find_element(By.ID, 'id_choose_language')
-    language_dropdown.send_keys(input_language, Keys.RETURN)
+    language_dropdown = Select(driver.find_element(By.ID, 'id_choose_language'))
+    language_dropdown.select_by_visible_text(input_language)
     driver.find_element(By.ID, 'submit-id-submit').click()
 
     result = WebDriverWait(driver, 10).until(
