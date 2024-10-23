@@ -16,9 +16,10 @@ def driver():
     yield chrome_driver
     chrome_driver.quit()
 
+
 def test_add_to_compare(driver):
     driver.get('https://magento.softwaretestingboard.com/gear/bags.html')
-    first_product =driver.find_element(By.XPATH, "//img[@alt='Push It Messenger Bag']")
+    first_product = driver.find_element(By.XPATH, "//img[@alt='Push It Messenger Bag']")
     add_to_compare_button = driver.find_element(By.XPATH, "//a[@title='Add to Compare' and @role='button']")
     actions = ActionChains(driver)
     actions.move_to_element(first_product)
