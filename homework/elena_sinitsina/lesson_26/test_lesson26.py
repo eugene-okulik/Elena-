@@ -3,7 +3,7 @@ import re
 from time import sleep
 
 
-def test_first(page:Page):
+def test_first(page: Page):
     page.goto("https://the-internet.herokuapp.com/")
     page.get_by_role("link", name="Form Authentication").click()
     sleep(2)
@@ -15,7 +15,7 @@ def test_first(page:Page):
     sleep(2)
 
 
-def test_second(page:Page): 
+def test_second(page: Page):
     page.goto("https://demoqa.com/automation-practice-form", timeout=60000)
     page.wait_for_load_state("domcontentloaded")
     page.get_by_placeholder("First Name").fill("Elena")
