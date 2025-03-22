@@ -1,0 +1,57 @@
+from playwright.sync_api import Page, expect
+import re
+from time import sleep
+
+
+def test_first(page: Page):
+    page.goto("https://the-internet.herokuapp.com/")
+    page.get_by_role("link", name="Form Authentication").click()
+    sleep(2)
+    page.get_by_role("textbox", name="Username").fill("elena")
+    sleep(2)
+    page.get_by_role("textbox", name="Password").fill("12345")
+    sleep(2)
+    page.get_by_role("button", name="Login").click()
+    sleep(2)
+
+
+def test_second(page: Page):
+    page.goto("https://demoqa.com/automation-practice-form", timeout=60000)
+    page.wait_for_load_state("domcontentloaded")
+    page.get_by_placeholder("First Name").fill("Elena")
+    sleep(2)
+    page.get_by_placeholder("Last Name").fill("Sinitsina")
+    sleep(2)
+    page.get_by_placeholder("name@example.com").fill("Sinitsina@gmail.com")
+    sleep(2)
+    page.locator('label[for="gender-radio-2"]').click()
+    sleep(2)
+    page.get_by_placeholder("Mobile Number").fill("333222333322")
+    sleep(2)
+    page.locator("#dateOfBirthInput").click()
+    page.locator(".react-datepicker__year-select").select_option("1980")
+    page.locator(".react-datepicker__month-select").select_option("3")
+    page.locator(".react-datepicker__day--025").click()
+    sleep(2)
+    page.locator("#subjectsContainer input").fill("Arts")
+    page.wait_for_selector(".css-1g6gooi")
+    page.keyboard.press("ArrowDown")
+    page.keyboard.press("Enter")
+    sleep(2)
+    page.locator('label[for="hobbies-checkbox-1"]').click()
+    sleep(2)
+    filePath = r"D:/My documents Elena/My documents/Личное/Photos/IMG_0696F.jpg"
+    page.locator('input[type="file"]').set_input_files(filePath)
+    sleep(2)
+    page.get_by_placeholder("Mobile Number").fill("333222333322")
+    page.get_by_placeholder("Current Address").fill("Planet Earth")
+    sleep(2)
+    page.locator("#state").click()
+    page.locator("#react-select-3-input").fill("NCR")
+    page.keyboard.press("Enter")
+    page.locator("#city").click()
+    page.locator("#react-select-4-input").fill("Delhi")
+    page.keyboard.press("Enter")
+    sleep(2)
+    page.locator("#submit").click()
+    sleep(2)
