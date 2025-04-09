@@ -6,6 +6,7 @@ def test_alert_confirm(page):
     sleep(3)
     page.goto('https://www.qa-practice.com/elements/alert/confirm')
     page.wait_for_selector('a.a-button')
+
     def handle_dialog(dialog):
         dialog.accept()
     page.on("dialog", handle_dialog)
@@ -14,6 +15,7 @@ def test_alert_confirm(page):
     result_text = page.locator('#result-text')
     expect(result_text).to_have_text('Ok')
     sleep(3)
+
 
 def test_new_page(page):
     sleep(3)
@@ -27,6 +29,7 @@ def test_new_page(page):
     original_button = page.locator('a#new-page-button.a-button')
     expect(original_button).to_be_enabled()
     sleep(3)
+
 
 def test_click_color(page):
     sleep(3)
