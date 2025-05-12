@@ -4,7 +4,6 @@ from pages.base_page import BasePage
 class EcoFriendly(BasePage):
     page_url = "collections/eco-friendly.html"
 
-
     def check_page_header_title_is(self, text):
         header_title = self.page.locator("h1")
         header_text = header_title.inner_text()

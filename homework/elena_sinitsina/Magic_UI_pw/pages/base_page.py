@@ -5,7 +5,6 @@ class BasePage:
     base_url = 'https://magento.softwaretestingboard.com/'
     page_url = None
 
-
     def __init__(self, page: Page):
         self.page = page
 

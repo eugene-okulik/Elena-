@@ -9,6 +9,7 @@ from pages.sale_page import Sale
 def eco_friendly_page(page):
     return EcoFriendly(page)
 
+
 @pytest.fixture()
 def sale_page(page):
     return Sale(page)
