@@ -1,6 +1,3 @@
-from conftest import eco_friendly_page
-
-
 def test_header_title(eco_friendly_page):
     eco_friendly_page.open_page()
     eco_friendly_page.check_page_header_title_is("Eco Friendly")
