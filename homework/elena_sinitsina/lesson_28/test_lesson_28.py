@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect, Request, Route
 import json
+import time
 
 
 def test_iphone(page: Page):
@@ -23,3 +24,4 @@ def test_iphone(page: Page):
     header = page.locator('h2.rf-digitalmat-overlay-header').nth(0)
 
     expect(header).to_have_text('яблокофон 16 про')
+    time.sleep(5)
